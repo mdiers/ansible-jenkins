@@ -46,6 +46,10 @@
   shell: /usr/sbin/update-java-alternatives -s "{{ jenkins_java_version }}"
   ignore_errors: yes
 
+- name: Install apt HTTPS transport
+  apt:
+    name: apt-transport-https
+
 - name: Add Jenkins key
   apt_key:
     url: "https://pkg.jenkins.io/debian-stable/jenkins.io.key"
